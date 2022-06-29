@@ -1,12 +1,16 @@
 body {
 	height: 100vh;
+	user-select: none;
+	background-color: bisque;
+}
+
+body,
+label {
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	user-select: none;
-	background-color: bisque;
 }
 
 input {
@@ -14,12 +18,39 @@ input {
 }
 
 label {
+	position: relative;
 	margin: 10px;
 	padding: 6px 8px;
 	background-color: burlywood;
 	border-radius: 5px;
-	border: 2px solid #004566;
+	border: 2px solid #201253;
+	box-shadow: gray 2px 2px 2px;
+	overflow: hidden;
 	cursor: pointer;
+}
+
+label::before {
+	content: '';
+	position: absolute;
+	background-color: blanchedalmond;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all .2s ease-in;
+	z-index: 0;
+}
+
+label:hover::before {
+	width: 100%;
+	height: 0%;
+}
+
+input:active~label {}
+
+label span {
+	z-index: 1;
 }
 
 .red {
