@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>HomeWork_Day1</title>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	</link>
+</head>
+
+<body>
+	<h1 id="text">Hello World!</h1>
+	<div>
+		<label for="btn_to_red">
+			<input type="button" id="btn_to_red" value="变为红色">
+			<span>变为红色</span>
+		</label>
+		<label for="btn_to_default">
+			<input type="button" id="btn_to_default" value="复原">
+			<span>复原</span>
+		</label>
+	</div>
+	<script type="text/javascript">
+		const text = document.querySelector('#text')
+		document.querySelector('#btn_to_red').onclick = () => {
+			text.className = 'red'
+		}
+		document.querySelector('#btn_to_default').onclick = () => {
+			text.className = ''
+		}
+	</script>
+</body>
+
+</html>
