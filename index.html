@@ -9,26 +9,19 @@
 </head>
 
 <body>
-	<h1 id="text">Hello World!</h1>
+	<!-- 关键：要使用 ~ 选择器，按钮必须和h1是同级元素，并且h1必须后置 -->
+	<input type="radio" name="color_btn" id="btn_to_red" value="变为红色">
+	<input type="radio" name="color_btn" id="btn_to_default" value="复原">
 	<div>
+		<!-- 使用label假装单选按钮是个按钮 -->
 		<label for="btn_to_red">
-			<input type="button" id="btn_to_red" value="变为红色">
 			<span>变为红色</span>
 		</label>
 		<label for="btn_to_default">
-			<input type="button" id="btn_to_default" value="复原">
 			<span>复原</span>
 		</label>
 	</div>
-	<script type="text/javascript">
-		const text = document.querySelector('#text')
-		document.querySelector('#btn_to_red').onclick = () => {
-			text.className = 'red'
-		}
-		document.querySelector('#btn_to_default').onclick = () => {
-			text.className = ''
-		}
-	</script>
+	<h1 id="text">Hello World!</h1>
 </body>
 
 </html>

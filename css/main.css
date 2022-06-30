@@ -7,8 +7,9 @@ body {
 body,
 label {
 	overflow: hidden;
+	/* 关键：flex 纵向反向排列，可将后面的h1显示到前面 */
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	justify-content: center;
 	align-items: center;
 }
@@ -47,12 +48,12 @@ label:hover::before {
 	height: 0%;
 }
 
-input:active~label {}
+/* 关键：选择变红按钮后面的h1，~ 只能选择后面的元素，所以h1必须后置
+然后用flex反向 */
+#btn_to_red:checked~#text {
+	color: #fa7298;
+}
 
 label span {
 	z-index: 1;
-}
-
-.red {
-	color: red
 }
